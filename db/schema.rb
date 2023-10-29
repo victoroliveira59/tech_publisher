@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_29_180918) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_29_181227) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,10 +23,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_29_180918) do
     t.index ["supplier_id"], name: "index_accounts_on_supplier_id"
   end
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_29_180341) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  create_table "assemblies", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "authors", force: :cascade do |t|
     t.string "name"
@@ -42,6 +43,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_29_180341) do
     t.index ["author_id"], name: "index_books_on_author_id"
   end
 
+  create_table "parts", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.bigint "supplier_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["supplier_id"], name: "index_parts_on_supplier_id"
+  end
+
   create_table "suppliers", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -50,4 +60,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_29_180341) do
 
   add_foreign_key "accounts", "suppliers"
   add_foreign_key "books", "authors"
+  add_foreign_key "parts", "suppliers"
 end
