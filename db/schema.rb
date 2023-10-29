@@ -29,6 +29,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_29_181227) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "assemblies_parts", id: false, force: :cascade do |t|
+    t.bigint "assembly_id", null: false
+    t.bigint "part_id", null: false
+  end
+
+  create_table "assemblies", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "authors", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -40,6 +51,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_29_181227) do
     t.bigint "author_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "assembly_id", null: false
+    t.index ["assembly_id"], name: "index_books_on_assembly_id"
     t.index ["author_id"], name: "index_books_on_author_id"
   end
 
@@ -59,6 +72,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_29_181227) do
   end
 
   add_foreign_key "accounts", "suppliers"
+  add_foreign_key "books", "assemblies"
   add_foreign_key "books", "authors"
   add_foreign_key "parts", "suppliers"
 end
