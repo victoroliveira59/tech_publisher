@@ -23,38 +23,30 @@ class SuppliersController < ApplicationController
   def create
     @supplier = Supplier.new(supplier_params)
 
-    respond_to do |format|
       if @supplier.save
-        format.html { redirect_to supplier_url(@supplier), notice: "Supplier was successfully created." }
-        format.json { render :show, status: :created, location: @supplier }
+         redirect_to supplier_url(@supplier), notice: "Supplier was successfully created."
+         render :show, status: :created, location: @supplier
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @supplier.errors, status: :unprocessable_entity }
+         render :new, status: :unprocessable_entity
       end
-    end
   end
 
   # PATCH/PUT /suppliers/1 or /suppliers/1.json
   def update
-    respond_to do |format|
       if @supplier.update(supplier_params)
-        format.html { redirect_to supplier_url(@supplier), notice: "Supplier was successfully updated." }
-        format.json { render :show, status: :ok, location: @supplier }
+         redirect_to supplier_url(@supplier), notice: "Supplier was successfully updated."
+         render :show, status: :ok, location: @supplier
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @supplier.errors, status: :unprocessable_entity }
+         render :edit, status: :unprocessable_entity
       end
-    end
   end
 
   # DELETE /suppliers/1 or /suppliers/1.json
   def destroy
     @supplier.destroy
 
-    respond_to do |format|
-      format.html { redirect_to suppliers_url, notice: "Supplier was successfully destroyed." }
-      format.json { head :no_content }
-    end
+       redirect_to suppliers_url, notice: "Supplier was successfully destroyed."
+       head :no_content
   end
 
   private

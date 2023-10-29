@@ -42,19 +42,15 @@ class AssembliesController < ApplicationController
         format.json { render :show, status: :ok, location: @assembly }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @assembly.errors, status: :unprocessable_entity }
-      end
+        format.json { render json: @assembly.errors, status: :unprocessabl
     end
   end
 
   # DELETE /assemblies/1 or /assemblies/1.json
   def destroy
     @assembly.destroy
-
-    respond_to do |format|
-      format.html { redirect_to assemblies_url, notice: "Assembly was successfully destroyed." }
-      format.json { head :no_content }
-    end
+      redirect_to assemblies_url, notice: "Assembly was successfully destroyed."
+      head :no_content
   end
 
   private
