@@ -12,13 +12,13 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
   </div>
 
   <div>
     <%= form.label :author_id, style: "display: block" %>
-    <%= form.text_field :author_id %>
+    <%= form.collection_select :author_id, Author.all, :id, :name %>
   </div>
 
   <div>

@@ -25,7 +25,6 @@ class BooksController < ApplicationController
 
     if @book.save
       redirect_to books_url, notice: 'Book was successfully created.'
-      render :show, status: :created, location: @book
     else
       render :new, status: :unprocessable_entity
     end
@@ -35,7 +34,6 @@ class BooksController < ApplicationController
   def update
     if @book.update(book_params)
       redirect_to books_url, notice: 'Book was successfully updated.'
-      render :show, status: :ok, location: @book
     else
       render :edit, status: :unprocessable_entity
     end

@@ -24,8 +24,7 @@ class PartsController < ApplicationController
     @part = Part.new(part_params)
 
     if @part.save
-      fredirect_to part_url(@part), notice: 'Part was successfully created.'
-      render :show, status: :created, location: @part
+      redirect_to part_url(@part), notice: 'Part was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -35,7 +34,6 @@ class PartsController < ApplicationController
   def update
     if @part.update(part_params)
       redirect_to part_url(@part), notice: 'Part was successfully updated.'
-      render :show, status: :ok, location: @part
     else
       render :edit, status: :unprocessable_entity
     end
@@ -46,7 +44,6 @@ class PartsController < ApplicationController
     @part.destroy
 
     redirect_to parts_url, notice: 'Part was successfully destroyed.'
-    head :no_content
   end
 
   private
