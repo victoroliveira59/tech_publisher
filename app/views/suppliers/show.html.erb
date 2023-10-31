@@ -1,6 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @supplier %>
+  <% if @supplier.account %>
+    <%= link_to "Acessar conta", supplier_account_path(@supplier) %>
+  <% else %>
+    <%= link_to "Criar conta", new_supplier_account_path(@supplier) %>
+  <%end%>
 
 <div>
   <%= link_to "Edit this supplier", edit_supplier_path(@supplier) %> |
