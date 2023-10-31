@@ -1,63 +1,62 @@
 # frozen_string_literal: true
 
 class AccountsController < ApplicationController
+  before_action :set_supplier
   before_action :set_account, only: %i[show edit update destroy]
 
-  # GET /accounts or /accounts.json
-  def index
-    @accounts = Account.all
-  end
+  def index; end
 
   # GET /accounts/1 or /accounts/1.json
   def show; end
 
   # GET /accounts/new
   def new
-    @account = Account.new
+    @supplier = Supplier.find(params[:supplier_id])
+    @account = @supplier.build_account
   end
 
   # GET /accounts/1/edit
   def edit; end
 
-  # POST /accounts or /accounts.js
-  @account = Account.new(account_params)
+  def create
+    # POST /accounts or /accounts.js
+    @account = @supplier.build_account(account_params)
 
-  if @account.save
-    redirect_to account_url(@account), notice: 'Account was successfully created.'
-    render :show, status: :created, location: @account
-  else
-    render :new, status: :unprocessable_entity
-    render json: @account.errors, status: :unprocessable_entity
+    if @account.save
+      redirect_to supplier_accounts_path(@supplier), notice: 'Account was successfully created.'
+    else
+      render :new, status: :unprocessable_entity
+
+    end
   end
-end
 
-# PATCH/PUT /accounts/1 or /accounts/1.json
-def update
-  if @account.update(account_params)
-    redirect_to account_url(@account), notice: 'Account was successfully updated.'
-    render :show, status: :ok, location: @account
-  else
-    render :edit, status: :unprocessable_entity
+  # PATCH/PUT /accounts/1 or /accounts/1.json
+  def update
+    if @account.update(account_params)
+      redirect_to supplier_account_path(@account), notice: 'Account was successfully updated.'
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
-end
 
-# DELETE /accounts/1 or /accounts/1.json
-def destroy
-  @account.destroy
-
-  respond_to do |_format|
-    redirect_to accounts_url, notice: 'Account was successfully destroyed.'
-    head :no_content
+  # DELETE /accounts/1 or /accounts/1.json
+  def destroy
+    @account.destroy
+      redirect_to suppliers_url, notice: 'Account was successfully destroyed.'
   end
 
   private
+  def set_supplier
+    @supplier = Supplier.find(params[:supplier_id])
+  end
+
   # Use callbacks to share common setup or constraints between actions.
   def set_account
-    @account = Account.find(params[:id])
+    @account = @supplier.account
   end
 
   # Only allow a list of trusted parameters through.
   def account_params
-    params.require(:account).permit(:bank, :number, :supplier_id)
+    params.require(:account).permit(:bank, :number)
   end
 end

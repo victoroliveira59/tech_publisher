@@ -9,7 +9,9 @@ class SuppliersController < ApplicationController
   end
 
   # GET /suppliers/1 or /suppliers/1.json
-  def show; end
+  def show
+    @supplier = Supplier.includes(:account).find(params[:id])
+  end
 
   # GET /suppliers/new
   def new
@@ -25,7 +27,6 @@ class SuppliersController < ApplicationController
 
     if @supplier.save
       redirect_to supplier_url(@supplier), notice: 'Supplier was successfully created.'
-      render :show, status: :created, location: @supplier
     else
       render :new, status: :unprocessable_entity
     end
@@ -35,7 +36,6 @@ class SuppliersController < ApplicationController
   def update
     if @supplier.update(supplier_params)
       redirect_to supplier_url(@supplier), notice: 'Supplier was successfully updated.'
-      render :show, status: :ok, location: @supplier
     else
       render :edit, status: :unprocessable_entity
     end
@@ -44,9 +44,7 @@ class SuppliersController < ApplicationController
   # DELETE /suppliers/1 or /suppliers/1.json
   def destroy
     @supplier.destroy
-
-    redirect_to suppliers_url, notice: 'Supplier was successfully destroyed.'
-    head :no_content
+      redirect_to suppliers_url, notice: 'Supplier was successfully destroyed.'
   end
 
   private
