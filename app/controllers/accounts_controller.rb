@@ -23,7 +23,7 @@ class AccountsController < ApplicationController
     @account = @supplier.build_account(account_params)
 
     if @account.save
-      redirect_to supplier_account_path(supplier_id: @supplier.id, id: @account.id), notice: 'Account was successfully created.'
+      redirect_to supplier_path(@supplier), notice: 'Account was successfully created.'
     else
       render :new, status: :unprocessable_entity
 
