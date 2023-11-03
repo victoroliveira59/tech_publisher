@@ -15,6 +15,11 @@
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
   </div>
+  <br>
+  <div>
+    <%= form.label :parts_ids, style: "display: block" %>
+    <%= collection_check_boxes(:assemblies, :parts_ids, Part.all, :id, :name) %>
+  </div>
 
   <div>
     <%= form.submit %>
