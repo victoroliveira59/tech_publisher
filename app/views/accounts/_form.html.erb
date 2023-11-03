@@ -1,0 +1,27 @@
+<%= form_with(model:@account, url: supplier_accounts_path(@supplier)) do |f| %>
+  <% if account.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(account.errors.count, "error") %> prohibited this account from being saved:</h2>
+
+      <ul>
+        <% account.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :bank %><br />
+    <%= f.text_field :bank %>
+  </div>
+
+  <div class="field">
+    <%= f.label :number %><br />
+    <%= f.text_field :number %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Create" %>
+  </div>
+<% end %>
