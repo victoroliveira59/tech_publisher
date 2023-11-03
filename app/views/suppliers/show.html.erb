@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @supplier %>
+  <% if @supplier.account %>
+  <div>
+    <p><strong>Number:</strong> <%= @supplier.account.number %> </p>
+    <%= link_to "Acessar conta", supplier_account_path(@supplier) %>
+  </div>
+  <% else %>
+    <%= link_to "Criar conta", new_supplier_account_path(@supplier) %>
+  <%end%>
+
+<div>
+  <%= link_to "Edit this supplier", edit_supplier_path(@supplier) %> |
+  <%= link_to "Back to suppliers", suppliers_path %>
+
+  <%= button_to "Destroy this supplier", @supplier, method: :delete %>
+</div>
