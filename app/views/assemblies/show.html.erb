@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<h2><%= render @assembly %></h2>
+
+<div>
+  <% @assembly.parts.each do |part| %>
+    <li><%= part.name%> (<%=part.description%>)</li>
+  <%end%>
+</div>
+<div>
+
+  <%= link_to "Edit this assembly", edit_assembly_path(@assembly) %> |
+  <%= link_to "Back to assemblies", assemblies_path %>
+
+  <%= button_to "Destroy this assembly", @assembly, method: :delete %>
+</div>
