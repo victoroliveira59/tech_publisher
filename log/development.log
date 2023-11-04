@@ -36215,3 +36215,849 @@ Started GET "/api/authors" for 127.0.0.1 at 2023-11-04 13:52:21 -0300
   
 ActionController::RoutingError (uninitialized constant Api::AuthorsController):
   
+Started GET "/books" for ::1 at 2023-11-04 13:54:56 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.4ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 45.9ms | Allocations: 36030)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.4ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 4.4ms | Allocations: 1283)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.3ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 4.6ms | Allocations: 1264)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.5ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.3ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.6ms | Allocations: 1264)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.8ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.1ms | Allocations: 1264)
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.3ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.9ms | Allocations: 1324)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.1ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.3ms | Allocations: 1265)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.8ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.9ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.9ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.9ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.8ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.9ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.7ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.9ms | Allocations: 1205)
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.6ms | Allocations: 1264)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.8ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.8ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.7ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.9ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.7ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.7ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.7ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.8ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.9ms | Allocations: 1204)
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.4ms | Allocations: 1264)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.7ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.9ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.7ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.5ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.3ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.7ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.7ms | Allocations: 1204)
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 4.0ms | Allocations: 1324)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.3ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 4.8ms | Allocations: 1300)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 4.4ms | Allocations: 1264)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 4.1ms | Allocations: 1264)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.6ms | Allocations: 1264)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.2ms | Allocations: 1265)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.9ms | Allocations: 1204)
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 4.0ms | Allocations: 1324)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.0ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.9ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.1ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.0ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.2ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.0ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.0ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.1ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.7ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.5ms | Allocations: 1205)
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.9ms | Allocations: 1264)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.3ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.2ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.2ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.0ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.2ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.9ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.9ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.9ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.0ms | Allocations: 1204)
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.5ms | Allocations: 1264)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.9ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.9ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.8ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.2ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.0ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.9ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 1.9ms | Allocations: 1204)
+  Rendered books/index.html.erb within layouts/application (Duration: 266.0ms | Allocations: 149152)
+  Rendered layout layouts/application.html.erb (Duration: 372.6ms | Allocations: 184701)
+Completed 200 OK in 392ms (Views: 355.6ms | ActiveRecord: 20.5ms | Allocations: 195842)
+
+
+Started GET "/suppliers" for ::1 at 2023-11-04 13:54:59 -0300
+Processing by SuppliersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering suppliers/index.html.erb within layouts/application
+  [1m[36mSupplier Load (0.7ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers"[0m
+  ↳ app/views/suppliers/index.html.erb:6
+  Rendered suppliers/_supplier.html.erb (Duration: 0.7ms | Allocations: 190)
+  Rendered suppliers/_supplier.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered suppliers/_supplier.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered suppliers/_supplier.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered suppliers/_supplier.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered suppliers/_supplier.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered suppliers/_supplier.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered suppliers/_supplier.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered suppliers/index.html.erb within layouts/application (Duration: 15.7ms | Allocations: 4397)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 6942)
+Completed 200 OK in 28ms (Views: 17.5ms | ActiveRecord: 4.4ms | Allocations: 10783)
+
+
+Started GET "/books" for ::1 at 2023-11-04 13:54:59 -0300
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.9ms | Allocations: 1380)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 4.8ms | Allocations: 1266)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.4ms | Allocations: 1264)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.8ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.3ms | Allocations: 1264)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.5ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.8ms | Allocations: 1264)
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.1ms | Allocations: 1324)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.3ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.5ms | Allocations: 1265)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.7ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.1ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.3ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.3ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.1ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.1ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.0ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.7ms | Allocations: 1205)
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.7ms | Allocations: 1264)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.7ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.3ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.8ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.3ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.7ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.1ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.5ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.4ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.7ms | Allocations: 1204)
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.4ms | Allocations: 1264)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.4ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.3ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.3ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.6ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.6ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.4ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.9ms | Allocations: 1204)
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.1ms | Allocations: 1324)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.0ms | Allocations: 1300)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.3ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 4.4ms | Allocations: 1264)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.3ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 4.4ms | Allocations: 1264)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.3ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 4.0ms | Allocations: 1264)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.6ms | Allocations: 1265)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.1ms | Allocations: 1204)
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.7ms | Allocations: 1324)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.9ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.9ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.2ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.7ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.8ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.1ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.3ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.0ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.8ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.6ms | Allocations: 1205)
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.0ms | Allocations: 1264)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.5ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.5ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.1ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.0ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.8ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.8ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.9ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 2.9ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.0ms | Allocations: 1204)
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.5ms | Allocations: 1264)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.0ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.0ms | Allocations: 1205)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.2ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.1ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.2ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 3.2ms | Allocations: 1204)
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:10
+  [1m[36mCACHE Assembly Load (0.0ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  Rendered books/_book.html.erb (Duration: 4.9ms | Allocations: 1204)
+  Rendered books/index.html.erb within layouts/application (Duration: 241.4ms | Allocations: 97214)
+  Rendered layout layouts/application.html.erb (Duration: 249.0ms | Allocations: 99547)
+Completed 200 OK in 251ms (Views: 242.2ms | ActiveRecord: 7.6ms | Allocations: 99903)
+
+
+Started GET "/authors" for ::1 at 2023-11-04 13:55:00 -0300
+Processing by AuthorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:6
+  Rendered authors/_author.html.erb (Duration: 0.8ms | Allocations: 192)
+  Rendered authors/_author.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered authors/_author.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered authors/_author.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered authors/_author.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered authors/_author.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered authors/_author.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered authors/_author.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered authors/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 3080)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 5623)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.3ms | Allocations: 6699)
+
+
+Started GET "/assemblies" for ::1 at 2023-11-04 13:55:00 -0300
+Processing by AssembliesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering assemblies/index.html.erb within layouts/application
+  [1m[36mAssembly Load (0.3ms)[0m  [1m[34mSELECT "assemblies".* FROM "assemblies"[0m
+  ↳ app/views/assemblies/index.html.erb:6
+  Rendered assemblies/_assembly.html.erb (Duration: 1.1ms | Allocations: 185)
+  Rendered assemblies/_assembly.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered assemblies/_assembly.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered assemblies/_assembly.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered assemblies/_assembly.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered assemblies/_assembly.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered assemblies/_assembly.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered assemblies/_assembly.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered assemblies/_assembly.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered assemblies/_assembly.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered assemblies/_assembly.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered assemblies/_assembly.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered assemblies/_assembly.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered assemblies/_assembly.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered assemblies/index.html.erb within layouts/application (Duration: 9.3ms | Allocations: 3843)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 6387)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.3ms | Allocations: 7470)
+
+
+Started GET "/api/books" for 127.0.0.1 at 2023-11-04 13:55:08 -0300
+Processing by Api::BooksController#index as */*
+  Parameters: {"default"=>{"format"=>:json}}
+No template found for Api::BooksController#index, rendering head :no_content
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 618)
+
+
+Started GET "/api/books" for 127.0.0.1 at 2023-11-04 13:55:58 -0300
+Processing by Api::BooksController#index as */*
+  Parameters: {"default"=>{"format"=>:json}}
+No template found for Api::BooksController#index, rendering head :no_content
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 197)
+
+
+Started GET "/api/books/1" for 127.0.0.1 at 2023-11-04 13:56:47 -0300
+Processing by Api::BooksController#show as */*
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:7:in `show'
+No template found for Api::BooksController#show, rendering head :no_content
+Completed 204 No Content in 5ms (ActiveRecord: 0.4ms | Allocations: 1510)
+
+
+Started GET "/api/books/" for 127.0.0.1 at 2023-11-04 13:56:51 -0300
+Processing by Api::BooksController#index as */*
+  Parameters: {"default"=>{"format"=>:json}}
+No template found for Api::BooksController#index, rendering head :no_content
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 197)
+
+
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+Started GET "/api/books/70" for 127.0.0.1 at 2023-11-04 13:57:42 -0300
+Processing by Api::BooksController#show as */*
+  Parameters: {"default"=>{"format"=>:json}, "id"=>"70"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:7:in `show'
+No template found for Api::BooksController#show, rendering head :no_content
+Completed 204 No Content in 2ms (ActiveRecord: 0.3ms | Allocations: 651)
+
+
