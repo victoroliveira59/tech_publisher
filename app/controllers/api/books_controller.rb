@@ -1,15 +1,19 @@
 class Api::BooksController < ApplicationController
-  before_action :set_book, only: %i{show create update destroy}
+  skip_before_action :verify_authenticity_token
 
   def index
     @books = Book.all
+    render json: @books
   end
 
-  def show;
+  def show
+    @book = Book.find(params[:id])
+    render json: @books
   end
 
   def new
     @book = Book.new
+    render json: @books
   end
 
   def create
@@ -17,32 +21,27 @@ class Api::BooksController < ApplicationController
     if @book.save
       redirect_to @book
     else
-      render 'new'
+      render json: @book.errors, status: :unprocessable_entity
     end
   end
 
-  def edit;
-  end
-
   def update
+    @book = Book.find(params[:id])
+
     if @book.update(book_params)
-      redirect_to @book
+      render json: @book
     else
-      render 'edit'
+      render json: @book.errors, status: :unprocessable_entity
     end
   end
 
   def destroy
+    @book = Book.find(params[:id])
     @book.destroy
-    redirect_to books_path
+    head :no_content
   end
 
   private
-
-  def set_book
-    @book = Book.find(params[:id])
-  end
-
   def book_params
     params.require(:book).permit(:title, :author_id)
   end
