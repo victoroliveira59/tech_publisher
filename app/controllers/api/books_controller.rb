@@ -1,4 +1,6 @@
 class Api::BooksController < ApplicationController
+  before_action:
+
   def index
     @books = Book.all
   end
@@ -41,8 +43,12 @@ class Api::BooksController < ApplicationController
 
   private
 
+  def set_books
+
+  end
+
   def book_params
-    params.require(:book).permit(:title, :author_id, :description, :published_date)
+    params.require(:book).permit(:title, :author_id)
   end
 end
 
