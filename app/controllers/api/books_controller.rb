@@ -1,12 +1,11 @@
 class Api::BooksController < ApplicationController
-  before_action:
+  before_action :set_book, only: %i{show create update destroy}
 
   def index
     @books = Book.all
   end
 
-  def show
-    @book = Book.find(params[:id])
+  def show;
   end
 
   def new
@@ -22,12 +21,10 @@ class Api::BooksController < ApplicationController
     end
   end
 
-  def edit
-    @book = Book.find(params[:id])
+  def edit;
   end
 
   def update
-    @book = Book.find(params[:id])
     if @book.update(book_params)
       redirect_to @book
     else
@@ -36,15 +33,14 @@ class Api::BooksController < ApplicationController
   end
 
   def destroy
-    @book = Book.find(params[:id])
     @book.destroy
     redirect_to books_path
   end
 
   private
 
-  def set_books
-
+  def set_book
+    @book = Book.find(params[:id])
   end
 
   def book_params
