@@ -36194,3 +36194,24 @@ Processing by AssembliesController#index as HTML
 Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.2ms | Allocations: 7443)
 
 
+Started GET "/apiauthors" for 127.0.0.1 at 2023-11-04 13:51:15 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/apiauthors"):
+  
+Started GET "/apibooks" for 127.0.0.1 at 2023-11-04 13:51:24 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/apibooks"):
+  
+Started GET "/apibook" for 127.0.0.1 at 2023-11-04 13:51:43 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/apibook"):
+  
+Started GET "/api/book" for 127.0.0.1 at 2023-11-04 13:52:04 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/book"):
+  
+Started GET "/api/authors" for 127.0.0.1 at 2023-11-04 13:52:21 -0300
+  
+ActionController::RoutingError (uninitialized constant Api::AuthorsController):
+  
