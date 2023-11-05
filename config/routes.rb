@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :authors
     resources :books
-    resources :suppliers
+    resources :suppliers do
+      resources :accounts
+    end
   end
   resources :assemblies
   resources :parts
