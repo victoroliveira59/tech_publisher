@@ -10,7 +10,7 @@ class Api::AssembliesController < ApplicationController
 
   # GET /api/v1/assemblies/1
   def show
-    render json: @assembly,
+    render json: @assembly
   end
 
   # POST /api/v1/assemblies
