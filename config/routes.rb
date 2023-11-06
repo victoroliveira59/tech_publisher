@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :suppliers do
       resources :accounts
     end
+    resources :parts
   end
   resources :assemblies
   resources :parts
