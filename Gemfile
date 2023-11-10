@@ -72,3 +72,5 @@ group :test do
 end
 
 gem "rubocop", "~> 1.57"
+
+gem "isbn", "~> 2.0"
