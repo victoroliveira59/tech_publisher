@@ -1,8 +1,8 @@
 # Authores
-friedrich = Author.create(name: 'Friedrich Nietzsche')
-augusto = Author.create(name: 'Augusto Cury')
-nicholas = Author.create(name: 'Nicholas Sparks')
-clarice = Author.create(name: 'Clarice Lispector')
+friedrich = Author.create(name: 'Friedrich Nietzsche', cpf: "87777703072")
+augusto = Author.create(name: 'Augusto Cury', cpf: "01813139016")
+nicholas = Author.create(name: 'Nicholas Sparks', cpf: "44880601020")
+clarice = Author.create(name: 'Clarice Lispector', cpf: "16597554094")
 
 # Suppliers
 cores_vivas = Supplier.create(name: 'Cores Vivas', cnpj: "89336094000188" )
@@ -90,7 +90,7 @@ Book.create(title: "A Legião Estrangeira"  , assembly: assemblies.sample, autho
 Book.create(title: "O Lustre" , assembly: assemblies.sample, author: clarice, isbn: isbn.sample)
 
 # Accounts
-Account.create(bank: 'Bradesco', number: '232633', supplier: cores_vivas, digit: '4')
+Account.create(bank: 'Itaú', number: '018798', supplier: cores_vivas, digit: '4')
 Account.create(bank: 'Itaú', number: '025468', supplier: am2, digit: '1')
 Account.create(bank: 'Caixa', number: '165415', supplier: soft, digit: '2')
 Account.create(bank: 'Bradesco', number: '232633', supplier: papelaria_smart, digit: '7')
