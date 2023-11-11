@@ -90,7 +90,7 @@ Book.create(title: "A Legião Estrangeira"  , assembly: assemblies.sample, autho
 Book.create(title: "O Lustre" , assembly: assemblies.sample, author: clarice, isbn: isbn.sample)
 
 # Accounts
-Account.create(bank: 'Bradesco', number: '232633', supplier: cores_vivas, digit: '4')
+Account.create(bank: 'Itaú', number: '018798', supplier: cores_vivas, digit: '4')
 Account.create(bank: 'Itaú', number: '025468', supplier: am2, digit: '1')
 Account.create(bank: 'Caixa', number: '165415', supplier: soft, digit: '2')
 Account.create(bank: 'Bradesco', number: '232633', supplier: papelaria_smart, digit: '7')
