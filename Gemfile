@@ -36,3 +36,6 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
 end
+gem "rubocop", "~> 1.57"
+gem "isbn", "~> 2.0"
+
