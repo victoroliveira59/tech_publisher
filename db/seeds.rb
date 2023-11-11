@@ -7,7 +7,7 @@ clarice = Author.create(name: 'Clarice Lispector')
 # Suppliers
 cores_vivas = Supplier.create(name: 'Cores Vivas', cnpj: "89336094000188" )
 soft = Supplier.create(name: 'Soft', cnpj: "37617836000140")
-am2 = Supplier.create(name: 'Am2', cnpj: "89236672000104",formatted: true)
+am2 = Supplier.create(name: 'Am2', cnpj: "89236672000104")
 papelaria_smart = Supplier.create(name: 'Capas customizadas', cnpj: "96965268000137")
 
 # Assemblies
