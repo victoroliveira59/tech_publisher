@@ -76,10 +76,10 @@ Book.create(title: "A Legião Estrangeira"  , assembly: assemblies.sample, autho
 Book.create(title: "O Lustre" , assembly: assemblies.sample, author: clarice)
 
 # Accounts
-Account.create(bank: 'Bradesco', number: '232633', supplier: cores_vivas)
-Account.create(bank: 'Itaú', number: '456465', supplier: am2)
-Account.create(bank: 'Caixa', number: '165415', supplier: soft)
-Account.create(bank: 'Bradesco', number: '232633', supplier: papelaria_smart)
+Account.create(bank: 'Bradesco', number: '232633', supplier: cores_vivas, digit: '4')
+Account.create(bank: 'Itaú', number: '025468', supplier: am2, digit: '1')
+Account.create(bank: 'Caixa', number: '165415', supplier: soft, digit: '2')
+Account.create(bank: 'Bradesco', number: '232633', supplier: papelaria_smart, digit: '7')
 
 # Parts
 capa_dura_removivel = Part.create(name: 'Capa dura removível', description: 'Capa removível chamada de Jacket, capa dura é bem simples, não tem muitas coisas na parte frontal', supplier: cores_vivas)
