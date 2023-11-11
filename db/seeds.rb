@@ -5,10 +5,10 @@ nicholas = Author.create(name: 'Nicholas Sparks')
 clarice = Author.create(name: 'Clarice Lispector')
 
 # Suppliers
-cores_vivas = Supplier.create(name: 'Cores Vivas')
-soft = Supplier.create(name: 'Soft')
-am2 = Supplier.create(name: 'Am2')
-papelaria_smart = Supplier.create(name: 'Capas customizadas')
+cores_vivas = Supplier.create(name: 'Cores Vivas', cnpj: "89336094000188" )
+soft = Supplier.create(name: 'Soft', cnpj: "37617836000140")
+am2 = Supplier.create(name: 'Am2', cnpj: "89236672000104",formatted: true)
+papelaria_smart = Supplier.create(name: 'Capas customizadas', cnpj: "96965268000137")
 
 # Assemblies
 encadernado = Assembly.create(name: 'Livro encardenado')
@@ -90,10 +90,10 @@ Book.create(title: "A Legião Estrangeira"  , assembly: assemblies.sample, autho
 Book.create(title: "O Lustre" , assembly: assemblies.sample, author: clarice, isbn: isbn.sample)
 
 # Accounts
-Account.create(bank: 'Bradesco', number: '232633', supplier: cores_vivas)
-Account.create(bank: 'Itaú', number: '456465', supplier: am2)
-Account.create(bank: 'Caixa', number: '165415', supplier: soft)
-Account.create(bank: 'Bradesco', number: '232633', supplier: papelaria_smart)
+Account.create(bank: 'Bradesco', number: '232633', supplier: cores_vivas, digit: '4')
+Account.create(bank: 'Itaú', number: '025468', supplier: am2, digit: '1')
+Account.create(bank: 'Caixa', number: '165415', supplier: soft, digit: '2')
+Account.create(bank: 'Bradesco', number: '232633', supplier: papelaria_smart, digit: '7')
 
 # Parts
 capa_dura_removivel = Part.create(name: 'Capa dura removível', description: 'Capa removível chamada de Jacket, capa dura é bem simples, não tem muitas coisas na parte frontal', supplier: cores_vivas)
