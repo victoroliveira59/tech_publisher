@@ -22,6 +22,17 @@
   </div>
 
   <div>
+    <%= form.label :assembly_id, style: "display: block" %>
+    <%= form.collection_select :assembly_id, Assembly.all, :id, :name %>
+  </div>
+
+
+  <div>
+    <%= form.label :isbn, style: "display: block" %>
+    <%= form.text_field :isbn %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

@@ -1,14 +1,14 @@
 # Authores
-friedrich = Author.create(name: 'Friedrich Nietzsche')
-augusto = Author.create(name: 'Augusto Cury')
-nicholas = Author.create(name: 'Nicholas Sparks')
-clarice = Author.create(name: 'Clarice Lispector')
+friedrich = Author.create(name: 'Friedrich Nietzsche', cpf: "87777703072")
+augusto = Author.create(name: 'Augusto Cury', cpf: "01813139016")
+nicholas = Author.create(name: 'Nicholas Sparks', cpf: "44880601020")
+clarice = Author.create(name: 'Clarice Lispector', cpf: "16597554094")
 
 # Suppliers
-cores_vivas = Supplier.create(name: 'Cores Vivas')
-soft = Supplier.create(name: 'Soft')
-am2 = Supplier.create(name: 'Am2')
-papelaria_smart = Supplier.create(name: 'Capas customizadas')
+cores_vivas = Supplier.create(name: 'Cores Vivas', cnpj: "89336094000188" )
+soft = Supplier.create(name: 'Soft', cnpj: "37617836000140")
+am2 = Supplier.create(name: 'Am2', cnpj: "89236672000104")
+papelaria_smart = Supplier.create(name: 'Capas customizadas', cnpj: "96965268000137")
 
 # Assemblies
 encadernado = Assembly.create(name: 'Livro encardenado')
@@ -28,58 +28,72 @@ assemblies = [
   edicao_limitada,
   edicao_de_luxo,
 ]
+isbn = [
+  9783127323207,
+  9788575223437,
+  9788575222638,
+  9788575222621
+]
+
+
+
+
+
+
+
+
 
 # Books
 
 # Friderich
-Book.create(title: "Assim Falou Zaratustra", assembly: assemblies.sample, author: friedrich)
-Book.create(title: "Ecce Homo", assembly: assemblies.sample, author: friedrich)
-Book.create(title: "Além do Bem e do Mal", assembly: assemblies.sample, author: friedrich)
-Book.create(title: "Genealogia da Moral" , assembly: assemblies.sample, author: friedrich)
-Book.create(title: "A Gaia Ciência", assembly: assemblies.sample, author: friedrich)
-Book.create(title: "Humano, Demasiado Humano" , assembly: assemblies.sample, author: friedrich)
-Book.create(title: "A Vontade de Poder" , assembly: assemblies.sample, author: friedrich)
+Book.create(title: "Assim Falou Zaratustra", assembly: assemblies.sample, author: friedrich, isbn: isbn.sample)
+Book.create(title: "Ecce Homo", assembly: assemblies.sample, author: friedrich ,isbn: isbn.sample)
+Book.create(title: "Além do Bem e do Mal", assembly: assemblies.sample, author: friedrich, isbn: isbn.sample)
+Book.create(title: "Genealogia da Moral" , assembly: assemblies.sample, author: friedrich, isbn: isbn.sample)
+Book.create(title: "A Gaia Ciência", assembly: assemblies.sample, author: friedrich, isbn: isbn.sample)
+Book.create(title: "Humano, Demasiado Humano" , assembly: assemblies.sample, author: friedrich,isbn: isbn.sample)
+Book.create(title: "A Vontade de Poder" , assembly: assemblies.sample, author: friedrich, isbn: isbn.sample)
 
 # Augusto
-Book.create(title: "O Vendedor de Sonhos" , assembly: assemblies.sample, author: augusto)
-Book.create(title: "Nunca Desista de seus Sonhos" , assembly: assemblies.sample, author: augusto)
-Book.create(title: "De Gênio e Louco todo Mundo tem um Pouco" , assembly: assemblies.sample, author: augusto)
-Book.create(title: "O Colecionador de Lágrimas" , assembly: assemblies.sample, author: augusto)
-Book.create(title: "Ansiedade - Como Enfrentar o Mal do Século" , assembly: assemblies.sample, author: augusto)
-Book.create(title: "Pais Brilhantes, Professores Fascinantes" , assembly: assemblies.sample, author: augusto)
-Book.create(title: "O Futuro da Humanidade" , assembly: assemblies.sample, author: augusto)
-Book.create(title: "A Fascinante Construção do Eu" , assembly: assemblies.sample, author: augusto)
-Book.create(title: "O Semeador de Ideias" , assembly: assemblies.sample, author: augusto)
-Book.create(title: "A Fascinante Construção do Eu" , assembly: assemblies.sample, author: augusto)
-Book.create(title: "A Fascinante Construção do Eu" , assembly: assemblies.sample, author: augusto)
+Book.create(title: "O Vendedor de Sonhos" , assembly: assemblies.sample, author: augusto, isbn: isbn.sample)
+Book.create(title: "Nunca Desista de seus Sonhos" , assembly: assemblies.sample, author: augusto, isbn: isbn.sample)
+Book.create(title: "De Gênio e Louco todo Mundo tem um Pouco" , assembly: assemblies.sample, author: augusto, isbn: isbn.sample)
+Book.create(title: "O Colecionador de Lágrimas" , assembly: assemblies.sample, author: augusto,isbn: isbn.sample)
+Book.create(title: "Ansiedade - Como Enfrentar o Mal do Século" , assembly: assemblies.sample, author: augusto, isbn: isbn.sample)
+Book.create(title: "Pais Brilhantes, Professores Fascinantes" , assembly: assemblies.sample, author: augusto, isbn: isbn.sample)
+Book.create(title: "O Futuro da Humanidade" , assembly: assemblies.sample, author: augusto, isbn: isbn.sample)
+Book.create(title: "A Fascinante Construção do Eu" , assembly: assemblies.sample, author: augusto, isbn: isbn.sample)
+Book.create(title: "O Semeador de Ideias" , assembly: assemblies.sample, author: augusto,isbn: isbn.sample)
+Book.create(title: "A Fascinante Construção do Eu" , assembly: assemblies.sample, author: augusto, isbn: isbn.sample)
+Book.create(title: "A Fascinante Construção do Eu" , assembly: assemblies.sample, author: augusto, isbn: isbn.sample)
 
 # Nicholas Sparks
-Book.create(title: "Diário de uma Paixão" , assembly: assemblies.sample, author: nicholas)
-Book.create(title: "Um Amor para Recordar" , assembly: assemblies.sample, author: nicholas)
-Book.create(title: "Querido John" , assembly: assemblies.sample, author: nicholas)
-Book.create(title: "Noites de Tormenta", assembly: assemblies.sample, author: nicholas)
-Book.create(title: "Um Porto Seguro" , assembly: assemblies.sample, author: nicholas)
-Book.create(title: "A Escolha"  , assembly: assemblies.sample, author: nicholas)
-Book.create(title: "O Melhor de Mim"  , assembly: assemblies.sample, author: nicholas)
-Book.create(title: "À Primeira Vista"  , assembly: assemblies.sample, author: nicholas)
-Book.create(title: "Um Homem de Sorte"  , assembly: assemblies.sample, author: nicholas)
-Book.create(title: "O Resgate"  , assembly: assemblies.sample, author: nicholas)
+Book.create(title: "Diário de uma Paixão" , assembly: assemblies.sample, author: nicholas, isbn: isbn.sample)
+Book.create(title: "Um Amor para Recordar" , assembly: assemblies.sample, author: nicholas, isbn: isbn.sample)
+Book.create(title: "Querido John" , assembly: assemblies.sample, author: nicholas, isbn: isbn.sample)
+Book.create(title: "Noites de Tormenta", assembly: assemblies.sample, author: nicholas, isbn: isbn.sample)
+Book.create(title: "Um Porto Seguro" , assembly: assemblies.sample, author: nicholas, isbn: isbn.sample)
+Book.create(title: "A Escolha"  , assembly: assemblies.sample, author: nicholas, isbn: isbn.sample)
+Book.create(title: "O Melhor de Mim"  , assembly: assemblies.sample, author: nicholas, isbn: isbn.sample)
+Book.create(title: "À Primeira Vista"  , assembly: assemblies.sample, author: nicholas, isbn: isbn.sample)
+Book.create(title: "Um Homem de Sorte"  , assembly: assemblies.sample, author: nicholas, isbn: isbn.sample)
+Book.create(title: "O Resgate"  , assembly: assemblies.sample, author: nicholas, isbn: isbn.sample)
 
 # Clarice Lispector
-Book.create(title: "A Hora da Estrela"   , assembly: assemblies.sample, author: clarice)
-Book.create(title: "A Paixão Segundo G.H." , assembly: assemblies.sample, author: clarice)
-Book.create(title: "Perto do Coração Selvagem"  , assembly: assemblies.sample, author: clarice)
-Book.create(title: "Laços de Família"  , assembly: assemblies.sample, author: clarice)
-Book.create(title: "Felicidade Clandestina"  , assembly: assemblies.sample, author: clarice)
-Book.create(title: "A Maçã no Escuro"  , assembly: assemblies.sample, author: clarice)
-Book.create(title: "A Legião Estrangeira"  , assembly: assemblies.sample, author: clarice)
-Book.create(title: "O Lustre" , assembly: assemblies.sample, author: clarice)
+Book.create(title: "A Hora da Estrela"   , assembly: assemblies.sample, author: clarice, isbn: isbn.sample)
+Book.create(title: "A Paixão Segundo G.H." , assembly: assemblies.sample, author: clarice, isbn: isbn.sample)
+Book.create(title: "Perto do Coração Selvagem"  , assembly: assemblies.sample, author: clarice, isbn: isbn.sample)
+Book.create(title: "Laços de Família"  , assembly: assemblies.sample, author: clarice, isbn: isbn.sample)
+Book.create(title: "Felicidade Clandestina"  , assembly: assemblies.sample, author: clarice, isbn: isbn.sample)
+Book.create(title: "A Maçã no Escuro"  , assembly: assemblies.sample, author: clarice, isbn: isbn.sample)
+Book.create(title: "A Legião Estrangeira"  , assembly: assemblies.sample, author: clarice, isbn: isbn.sample)
+Book.create(title: "O Lustre" , assembly: assemblies.sample, author: clarice, isbn: isbn.sample)
 
 # Accounts
-Account.create(bank: 'Bradesco', number: '232633', supplier: cores_vivas)
-Account.create(bank: 'Itaú', number: '456465', supplier: am2)
-Account.create(bank: 'Caixa', number: '165415', supplier: soft)
-Account.create(bank: 'Bradesco', number: '232633', supplier: papelaria_smart)
+Account.create(bank: 'Itaú', number: '018798', supplier: cores_vivas, digit: '4')
+Account.create(bank: 'Itaú', number: '025468', supplier: am2, digit: '1')
+Account.create(bank: 'Caixa', number: '165415', supplier: soft, digit: '2')
+Account.create(bank: 'Bradesco', number: '232633', supplier: papelaria_smart, digit: '7')
 
 # Parts
 capa_dura_removivel = Part.create(name: 'Capa dura removível', description: 'Capa removível chamada de Jacket, capa dura é bem simples, não tem muitas coisas na parte frontal', supplier: cores_vivas)
