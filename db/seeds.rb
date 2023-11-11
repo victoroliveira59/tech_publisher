@@ -1,8 +1,8 @@
 # Authores
-friedrich = Author.create(name: 'Friedrich Nietzsche')
-augusto = Author.create(name: 'Augusto Cury')
-nicholas = Author.create(name: 'Nicholas Sparks')
-clarice = Author.create(name: 'Clarice Lispector')
+friedrich = Author.create(name: 'Friedrich Nietzsche', cpf: "87777703072")
+augusto = Author.create(name: 'Augusto Cury', cpf: "01813139016")
+nicholas = Author.create(name: 'Nicholas Sparks', cpf: "44880601020")
+clarice = Author.create(name: 'Clarice Lispector', cpf: "16597554094")
 
 # Suppliers
 cores_vivas = Supplier.create(name: 'Cores Vivas', cnpj: "89336094000188" )
