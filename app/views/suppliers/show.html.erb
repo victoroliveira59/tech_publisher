@@ -4,6 +4,7 @@
   <% if @supplier.account %>
   <div>
     <p><strong>Number:</strong> <%= @supplier.account.number %> </p>
+
     <%= link_to "Acessar conta", supplier_account_path(@supplier) %>
   </div>
   <% else %>
