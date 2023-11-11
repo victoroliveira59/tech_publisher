@@ -3,7 +3,7 @@
 <h2><%= @assembly.name %></h2>
 
 <div>
-  <%= @assembly.parts.each do |part| %>
+  <% @assembly.parts.each do |part| %>
     <li><%= part.name%> (<%=part.description%>)</li>
   <%end%>
 </div>
