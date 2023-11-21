@@ -4,6 +4,10 @@ class Account < ApplicationRecord
   validates :bank, presence: true
   validates :number, length: { is: 6 }
 
+  def self.ransackable_attributes(auth_object = nil)
+    ["number"]
+  end
+
   include AccountsHelper
 
   validates :digit, presence: true, format: { with: /[0-9a-p]/ }
