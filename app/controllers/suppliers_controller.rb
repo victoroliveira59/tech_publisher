@@ -4,10 +4,22 @@ class SuppliersController < ApplicationController
   before_action :set_supplier, only: %i[show edit update destroy]
   # GET /suppliers or /suppliers.json
   def index
-    @q = Supplier.ransack(params[:q])
-    @suppliers = @q.result(distinct: true)
-
+    @suppliers = Supplier.all
+    # Condição para pesquisa de filtros de Suppliers
+    if params[:filter_by].present? && params[:query].present?
+      case params[:filter_by]
+      when 'name'
+        @suppliers = @suppliers.where("name LIKE ?", "%#{params[:query]}%")
+      when 'account_number'
+        @suppliers = @suppliers.joins(:account).where("accounts.number LIKE ?", "%#{params[:query]}%")
+      when 'author_name'
+        @suppliers = @suppliers.joins(parts: { assemblies: { book: :author } }).where("authors.name LIKE ?", "%#{params[:query]}%")
+      else
+        render index
+      end
+    end
   end
+
 
 
   # GET /suppliers/1 or /suppliers/1.json
