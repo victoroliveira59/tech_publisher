@@ -1,11 +1,14 @@
-<%= search_form_for @q do |f| %>
+<%= form_with url: suppliers_path, method: :get, local: true do |f| %>
+  <div>
+    <%= f.label :filter_by, "Filtrar por:" %>
 
-  <%= f.label :name_cont, "Pesquisar"%>
-  <%= f.search_field :name_cont %>
+    <%= f.select :filter_by, options_for_select([['Selecione um filtro',''],['Nome', 'name'], ['Número da Conta', 'account_number'], ['Nome do Autor', 'author_name']], params[:filter_by]), {} %>
+  </div>
 
-  <%= f.label :account_number_cont, "Pesquisar"%>
-  <%= f.search_field :account_number_cont %>
+  <div>
+    <%= f.label :query, "Consulta" %>
+    <%= f.text_field :query, value: params[:query] %>
+  </div>
 
-
-  <%= f.submit %>
+  <%= f.submit "Search" %>
 <% end %>
