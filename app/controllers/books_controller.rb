@@ -10,7 +10,7 @@ class BooksController < ApplicationController
     if params[:filter_by].present? && params[:query].present?
       case params[:filter_by]
       when 'title'
-        @books = @books.where("name LIKE ?", "%#{params[:query]}%")
+        @books = @books.where("title LIKE ?", "%#{params[:query]}%")
       end
     end
   end
