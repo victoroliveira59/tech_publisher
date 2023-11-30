@@ -2,7 +2,7 @@
   <div>
     <%= f.label :filter_by, "Filtrar por:" %>
 
-    <%= f.select :filter_by, options_for_select([['Selecione um filtro',''],['Title', 'title']], params[:filter_by]), {} %>
+    <%= f.select :filter_by, options_for_select([['Selecione um filtro',''],['Titulo do livros', 'title'], ['Nome do Autor', 'author_name']], params[:filter_by]), {} %>
   </div>
 
   <div>
