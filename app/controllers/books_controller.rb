@@ -12,6 +12,8 @@ class BooksController < ApplicationController
     case params[:filter_by]
     when 'title'
       @books = @books.where('title LIKE ?', "%#{params[:query]}%")
+    when 'author_name'
+      @books = @books.joins(:author).where(" authors.name LIKE ? ", "%#{params[:query]}%")
     else
       render index
     end
