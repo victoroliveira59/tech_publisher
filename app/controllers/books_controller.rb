@@ -7,11 +7,13 @@ class BooksController < ApplicationController
   def index
     @books = Book.all
 
-    if params[:filter_by].present? && params[:query].present?
-      case params[:filter_by]
-      when 'title'
-        @books = @books.where("title LIKE ?", "%#{params[:query]}%")
-      end
+    return unless params[:filter_by].present? && params[:query].present?
+
+    case params[:filter_by]
+    when 'title'
+      @books = @books.where('title LIKE ?', "%#{params[:query]}%")
+    else
+      render index
     end
   end
 
