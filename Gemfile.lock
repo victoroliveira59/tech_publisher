@@ -261,6 +261,7 @@ DEPENDENCIES
   cpf_cnpj
   debug
   faker (~> 3.2, >= 3.2.2)
+  foreman (~> 0.87.2)
   importmap-rails
   isbn (~> 2.0)
   pg (~> 1.1)

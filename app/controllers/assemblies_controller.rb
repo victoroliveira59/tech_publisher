@@ -5,6 +5,14 @@ class AssembliesController < ApplicationController
   # GET /assemblies or /assemblies.json
   def index
     @assemblies = Assembly.all
+    return unless params[:filter_by].present? && params[:query].present?
+
+    case params[:filter_by]
+    when 'parts_name'
+      @assemblies = @assemblies.joins(:parts).where('parts.name LIKE ?', "%#{params[:query]}%")
+    else
+      render index
+    end
   end
 
   # GET /assemblies/1 or /assemblies/1.json
