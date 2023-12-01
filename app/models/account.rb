@@ -5,6 +5,10 @@ class Account < ApplicationRecord
   validates :number, length: { is: 6 }, uniqueness: true
 
 
+  def self.ransackable_attributes(auth_object = nil)
+    ["number"]
+  end
+
   include AccountsHelper
 end
 

@@ -2,7 +2,9 @@
 
 <h1>Suppliers</h1>
 
+<%= render "filter" %>
 <div id="suppliers">
+
   <% @suppliers.each do |supplier| %>
     <%= render supplier %>
     <p>

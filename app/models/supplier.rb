@@ -6,5 +6,4 @@ class Supplier < ApplicationRecord
   include CnpjHelper
   validates :cnpj, presence: true,  uniqueness: true, length: { is: 14 }, format: { with: /\d{14}/ }
   validate :formatted_cnpj
-
 end
