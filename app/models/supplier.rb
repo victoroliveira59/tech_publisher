@@ -4,7 +4,6 @@ class Supplier < ApplicationRecord
   has_many :parts, dependent: :destroy
 
   include CnpjHelper
-  validates :cnpj, presence: true, length: { is: 14 }, format: { with: /\d{14}/ }
-  validate :validade_cnpj
+  validates :cnpj, presence: true,  uniqueness: true, length: { is: 14 }, format: { with: /\d{14}/ }
   validate :formatted_cnpj
 end

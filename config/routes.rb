@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :parts
     resources :suppliers do
       resources :accounts
+      get 'search', on: :collection
     end
   end
   # routes crud's
@@ -15,5 +16,6 @@ Rails.application.routes.draw do
   resources :authors
   resources :suppliers do
     resources :accounts
+    get 'search', on: :collection
   end
 end
