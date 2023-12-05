@@ -45,6 +45,11 @@ class AuthorsController < ApplicationController
     redirect_to authors_url, notice: "Author was successfully destroyed.", status: :see_other
   end
 
+  def report
+    @author = Author.all
+    render 'report'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_author

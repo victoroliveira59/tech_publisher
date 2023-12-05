@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <h1>Report Author</h1>
+  <hr>
+  <title>Information Author</title>
+</head>
+<body>
+
+<% @author.each do |author| %>
+  <div style="float: left; margin-right: 40px;">
+    <strong>Name:</strong> <%= author.name %><br>
+    <strong>CPF:</strong> <%= author.cpf.to_s.insert(3, '.').insert(7, '.').insert(11, '-') %><br>
+    <strong>Livros Publicados:</strong> <%= author.books.count %><br>
+  </div>
+
+  <div style="float: left;">
+    <% author.books.each do |book| %>
+      <div>
+        <strong>Livro:</strong> <%= book.title %><br>
+        <strong>ISBN:</strong> <%= book.isbn %><br>
+      </div>
+    <% end %>
+
+  </div>
+
+  <div style="clear: both;"></div>
+  <hr>
+<% end %>
+
+</body>
+</html>
