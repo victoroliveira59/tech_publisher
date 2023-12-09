@@ -18,4 +18,7 @@ Rails.application.routes.draw do
     resources :accounts
     get 'search', on: :collection
   end
+  resources :reports do
+    get 'index', on: :collection
+  end
 end
