@@ -61,12 +61,6 @@ class SuppliersController < ApplicationController
   end
 
   # app/controllers/suppliers_controller.rb
-  def report
-    @suppliers = Supplier.all
-  end
-
-
-
   private
 
   # Use callbacks to share common setup or constraints between actions.
