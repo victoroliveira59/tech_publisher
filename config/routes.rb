@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+
   namespace :api, defaults: { format: :json } do
     resources :authors
     resources :books
@@ -15,12 +16,10 @@ Rails.application.routes.draw do
   resources :assemblies
   resources :parts
   resources :books
-
-  resources :authors do
-    get 'report', on: :collection
-  end
+  resources :authors
   resources :suppliers do
     resources :accounts
     get 'search', on: :collection
   end
+  get 'reports_authors/index'
 end
