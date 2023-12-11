@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'report_books/index'
   namespace :api, defaults: { format: :json } do
     resources :authors
     resources :books
@@ -19,5 +18,4 @@ Rails.application.routes.draw do
     resources :accounts
     get 'search', on: :collection
   end
-  resources :report_books, only: [:index]
 end
