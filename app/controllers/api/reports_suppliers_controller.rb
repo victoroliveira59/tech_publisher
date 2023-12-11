@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# class Api::ReportsSuppliersController
 class Api::ReportsSuppliersController < ApplicationController
   # Filtro para Gerar Relatório de Fornecedor individual e de todos
   def index
