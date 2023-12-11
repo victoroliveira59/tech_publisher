@@ -1,7 +1,7 @@
-<%= form_with url:  report_books_path, method: :get, local: true do |f| %>
+<%= form_with url: reports_suppliers_index_path, method: :get, local: true do |f| %>
   <div>
     <%= f.label :filter_by, "Filtrar por:" %>
-    <%= f.select :filter_by, options_for_select([['Selecione um filtro',''],['Title', 'title'],['ISBN', 'isbn']], params[:filter_by]), {} %>
+    <%= f.select :filter_by, options_for_select([['Selecione um filtro',''],['Nome', 'name']], params[:filter_by]), {} %>
   </div>
 
   <div>

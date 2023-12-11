@@ -1,16 +1,15 @@
 # frozen_string_literal: true
 
-class ReportBooksController < ApplicationController
+class ReportsSuppliersController < ApplicationController
+  # Filtro para Gerar Relatório de Fornecedor individual e de todos
   def index
-    @books = Book.all
+    @suppliers = Supplier.all
     # Condição para pesquisa de filtros de Suppliers
     return unless params[:filter_by].present? && params[:query].present?
 
     case params[:filter_by]
-    when 'title'
-      @books = @books.where('title ILIKE ?', "%#{params[:query]}%")
-    when 'isbn'
-      @books = @books.where('isbn ILIKE ?', "%#{params[:query]}%")
+    when 'name'
+      @suppliers = @suppliers.where('name LIKE ?', "%#{params[:query]}%")
     else
       render index
     end

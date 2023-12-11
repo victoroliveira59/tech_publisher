@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
@@ -10,6 +12,8 @@ Rails.application.routes.draw do
       get 'search', on: :collection
     end
     resources :report_books, only: [:index]
+    get 'reports_suppliers/index'
+    get 'reports_authors/index'
   end
   # routes crud's
   resources :assemblies
@@ -17,8 +21,10 @@ Rails.application.routes.draw do
   resources :books
   resources :authors
   resources :suppliers do
-    resources :accounts
+    resources :accounts, controller: 'accounts'
     get 'search', on: :collection
   end
   resources :report_books, only: [:index]
+  get 'reports_suppliers/index'
+  get 'reports_authors/index'
 end
