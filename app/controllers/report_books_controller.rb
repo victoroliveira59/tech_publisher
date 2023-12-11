@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ReportBooksController < ApplicationController
+  # Fitro para gerar relatório individual e geral
   def index
     @books = Book.all
     # Condição para pesquisa de filtros de Suppliers
