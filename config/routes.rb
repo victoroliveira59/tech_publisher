@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get 'search', on: :collection
     end
     get 'reports_suppliers/index'
+    get 'reports_authors/index'
   end
   # routes crud's
   resources :assemblies
@@ -23,4 +24,5 @@ Rails.application.routes.draw do
     get 'search', on: :collection
   end
   get 'reports_suppliers/index'
+  get 'reports_authors/index'
 end
