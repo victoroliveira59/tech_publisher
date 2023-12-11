@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resources :accounts
       get 'search', on: :collection
     end
+    get 'reports_suppliers/index'
     get 'reports_authors/index'
   end
   # routes crud's
@@ -19,8 +20,9 @@ Rails.application.routes.draw do
   resources :books
   resources :authors
   resources :suppliers do
-    resources :accounts
+    resources :accounts, controller: 'accounts'
     get 'search', on: :collection
   end
+  get 'reports_suppliers/index'
   get 'reports_authors/index'
 end
