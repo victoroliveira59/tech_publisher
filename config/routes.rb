@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resources :accounts
       get 'search', on: :collection
     end
+    resources :report_books, only: [:index]
     get 'reports_suppliers/index'
     get 'reports_authors/index'
   end
@@ -23,6 +24,7 @@ Rails.application.routes.draw do
     resources :accounts, controller: 'accounts'
     get 'search', on: :collection
   end
+  resources :report_books, only: [:index]
   get 'reports_suppliers/index'
   get 'reports_authors/index'
 end
