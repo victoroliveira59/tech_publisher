@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'reports_suppliers/index'
+
   namespace :api, defaults: { format: :json } do
     resources :authors
     resources :books
@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resources :accounts
       get 'search', on: :collection
     end
+    get 'reports_suppliers/index'
   end
   # routes crud's
   resources :assemblies
