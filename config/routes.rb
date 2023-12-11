@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
+
   namespace :api, defaults: { format: :json } do
     resources :authors
     resources :books
@@ -8,6 +11,7 @@ Rails.application.routes.draw do
       resources :accounts
       get 'search', on: :collection
     end
+    get 'reports_authors/index'
   end
   # routes crud's
   resources :assemblies
@@ -18,4 +22,5 @@ Rails.application.routes.draw do
     resources :accounts
     get 'search', on: :collection
   end
+  get 'reports_authors/index'
 end
