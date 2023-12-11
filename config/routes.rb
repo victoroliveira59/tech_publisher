@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resources :accounts
       get 'search', on: :collection
     end
+    get 'reports_authors/index'
   end
   # routes crud's
   resources :assemblies
