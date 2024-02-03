@@ -11,11 +11,11 @@
 
     <%= render "shared/fonts" %>
     <%= render "shared/meta" %>
-    <%= custom_color_css %>
+    <%= custom_colors_css %>
     <%= yield :head %>
   </head>
 
-  <body class="rui">
+  <body class="rui" data-controller="dark-mode search">
     <%= render "shared/flash" %>
     <%= yield %>
     <%= railsui_launcher if Rails.env.development? %>
