@@ -6,7 +6,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.2.2'
 gem 'active_model_serializers', '~> 0.10.2'
 gem 'bootsnap', require: false
-gem 'importmap-rails'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 6.4'
 gem 'rails', '~> 7.1.3'
@@ -20,7 +19,7 @@ gem 'foreman'
 gem "railsui", github: "getrailsui/railsui", branch: "main"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
 gem "cpf_cnpj"
 gem "validators"
 gem 'brazilian_documents', '~> 0.1.4'
@@ -41,6 +40,5 @@ group :test do
 end
 gem 'rubocop-ast'
 gem "isbn", "~> 2.0"
-
 
 
