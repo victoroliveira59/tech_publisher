@@ -1,13 +1,13 @@
-<div id="<%= dom_id author %>">
-  <hr>
-    <p>
-      <strong>Name:</strong>
-      <%= author.name %>
+<article id="<%= dom_id author %>" class="py-6 prose prose-zinc dark:prose-invert first:pt-0 " style="margin-left: 20px">
+  <div>
+ <br>
+    <p class="my-0 font-heading font-medium">
+      Name: <%= author.name %>
+    </p>
+  </div>
+
+    <p class=" my-0 font-heading font-medium flex items-center justify-between pb-3 border-b dark:border-zinc-700 border-zinc-200">
+      CPF:  <%= author.formatted_cpf %>
     </p>
 
-      <p>
-        <strong>Cpf:</strong>
-        <%= author.formatted_cpf %>
-      </p>
-
-</div>
+</article>
