@@ -1,14 +1,17 @@
-
-  <form action="/books" method="get">
+<form action="/books" method="get" style="margin-left: 20px">
+  <br>
     <label for="filter_by" class="aria-label text-1xl tracking-tighter font-extrabold text-slate-900 dark:text-slate-100">Filtrar por:</label>
-    <select id="filter_by" name="filter_by" class="form-select" style="color: black;width: 200px">
+  <select id="filter_by" name="filter_by" class="form-select" style="color: white;width: 250px">
       <option value="" selected>Open this select menu</option>
       <option value="title">Título do livro</option>
       <option value="author_name">Nome do Autor</option>
     </select>
+  <br>
     <label for="query" class="text-1xl tracking-tighter font-extrabold text-slate-900 dark:text-slate-100">Consulta:</label>
-    <input type="text" id="query" name="query" value="<%= params[:query] %>" class="form-select aria-label" style="color: black;width: 200px">
-
+  <br>
+  <input type="text" id="query" name="query" value="<%= params[:query] %>" class="form-input aria-label" style="color: white;width: 250px">
+  <br><br>
     <input type="submit" value="Filtrar" class="btn btn-primary">
+  <br>
   </form>
 
