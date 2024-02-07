@@ -194,6 +194,7 @@ GEM
     nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pagy (6.4.3)
     parallel (1.23.0)
     parser (3.2.2.4)
       ast (~> 2.4.1)
@@ -329,6 +330,7 @@ DEPENDENCIES
   foreman
   image_processing (~> 1.2)
   isbn (~> 2.0)
+  pagy
   pg (~> 1.1)
   puma (~> 6.4)
   rails (~> 7.1.3)
