@@ -11,14 +11,14 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="mb-3">
+    <label for="author_name" class="aria-label text-1xl tracking-tighter font-extrabold text-slate-900 dark:text-slate-100" style="display: block">Name</label>
+    <input type="text" id="author_name" name="author[name]" value="<%= @author.name %>" class="form-input aria-label" style="color: white;width: 250px">
   </div>
 
   <div>
-    <%= form.label :cpf, style: "display: block" %>
-    <%= form.text_field :cpf %>
+    <label for="author_name" class="aria-label text-1xl tracking-tighter font-extrabold text-slate-900 dark:text-slate-100" style="display: block">CPF</label>
+    <input type="text" id="author_cpf" name="author[name]" value="<%= @author.formatted_cpf %>" class="form-input aria-label" style="color: white;width: 250px">
   </div>
 
   <div>
