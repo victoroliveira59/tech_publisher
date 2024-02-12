@@ -10,18 +10,19 @@
       </ul>
     </div>
   <% end %>
+   <div style="margin-left: 20px">
+     <div class="mb-4">
+       <label for="supplier_name" class="aria-label text-1xl tracking-tighter font-extrabold text-slate-900 dark:text-slate-100" style="display: block">Name</label>
+       <input type="text" id="supplier_name" name="supplier[name]" value="<%= @supplier.name %>" class="form-input aria-label" style="color: white;width: 250px">
+     </div>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+     <div>
+       <label for="supplier_cnpj" class="aria-label text-1xl tracking-tighter font-extrabold text-slate-900 dark:text-slate-100" style="display: block">CNPJ</label>
+       <input type="text" id="supplier_cnpj" name="supplier[cnpj]" value="<%= @supplier.cnpj %>" class="form-input aria-label" style="color: white;width: 250px">
+     </div>
 
-  <div>
-    <%= form.label :cnpj, style: "display: block" %>
-    <%= form.text_field :cnpj %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+     <div class="pt-3">
+       <input type="submit" value="Submit" class="btn btn-primary">
+     </div>
+   </div>
+ <% end %>
