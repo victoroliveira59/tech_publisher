@@ -1,5 +1,5 @@
 <p style="color: green"><%= notice %></p>
-<p style="color: green"><%= notice %></p>
+
 <div>
   <%= link_to 'Gerar Relatório', reports_suppliers_index_path, class: "hover:underline text-primary-600 dark:text-primary-500", style:"margin-left: 20px"%>
 </div>
@@ -16,9 +16,9 @@
         <% @suppliers.each do |supplier| %>
           <div>
               <%= link_to supplier_path(supplier) do %>
-              <div style="display: flex; align-items: center;">
+              <div style="display: flex; align-items: center; mso-margin-top-alt: 20px">
                 <span style="margin-right: 10px;">Supplier:</span>
-                <h2 class="hover:underline text-primary-600 dark:text-primary-500" style="margin: 0;"><%= supplier.name %></h2>
+                <h2 class="hover:underline text-primary-600 dark:text-primary-500"><%= supplier.name %></h2>
               </div>
               <% end %>
           </div>
