@@ -1,18 +1,28 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Suppliers</h1>
-
-<%= link_to 'Gerar Relatório', reports_suppliers_index_path %>
-
-<%= render "filter" %>
-<div id="suppliers">
-
-  <% @suppliers.each do |supplier| %>
-    <%= render supplier %>
-    <p>
-      <%= link_to "Show this supplier", supplier %>
-    </p>
-  <% end %>
+<div>
+  <%= link_to 'Gerar Relatório', reports_suppliers_index_path, class: "hover:underline text-primary-600 dark:text-primary-500", style:"margin-left: 20px"%>
 </div>
 
-<%= link_to "New supplier", new_supplier_path %>
+<div class="max-w-3xl mx-auto px-4 my-8">
+  <div class="flex items-center justify-between pb-6 border-b dark:border-zinc-700 border-zinc-200">
+    <h1 class="text-4xl font-semibold font-heading text-zinc-900 dark:text-zinc-100 tracking-tight">Suppliers</h1>
+    <div class="flex items-center justify-end">
+      <%= link_to "New Supplier", new_supplier_path, class: "btn btn-primary", style: "color: white;width: 120px" %>
+    </div>
+  </div>
+  <div id="suppliers" class="divide-y divide-zinc-300 dark:divide-zinc-700 " style="margin-top: 10px">
+    <%= render 'filter' %>
+        <% @suppliers.each do |supplier| %>
+          <div>
+              <%= link_to supplier_path(supplier) do %>
+              <div style="display: flex; align-items: center; mso-margin-top-alt: 20px">
+                <span style="margin-right: 10px;">Supplier:</span>
+                <h2 class="hover:underline text-primary-600 dark:text-primary-500"><%= supplier.name %></h2>
+              </div>
+              <% end %>
+          </div>
+        <% end %>
+    </div>
+</div>
+
