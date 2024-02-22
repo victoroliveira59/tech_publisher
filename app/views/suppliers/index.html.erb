@@ -4,14 +4,14 @@
   <%= link_to 'Gerar Relatório', reports_suppliers_index_path, class: "hover:underline text-primary-600 dark:text-primary-500", style:"margin-left: 20px"%>
 </div>
 
-<div class="max-w-3xl mx-auto px-4 my-16">
+<div class="max-w-3xl mx-auto px-4 my-8">
   <div class="flex items-center justify-between pb-6 border-b dark:border-zinc-700 border-zinc-200">
     <h1 class="text-4xl font-semibold font-heading text-zinc-900 dark:text-zinc-100 tracking-tight">Suppliers</h1>
     <div class="flex items-center justify-end">
       <%= link_to "New Supplier", new_supplier_path, class: "btn btn-primary", style: "color: white;width: 120px" %>
     </div>
   </div>
-  <div id="suppliers" class="divide-y divide-zinc-300 dark:divide-zinc-700 " style="margin-top: 50px">
+  <div id="suppliers" class="divide-y divide-zinc-300 dark:divide-zinc-700 " style="margin-top: 10px">
     <%= render 'filter' %>
         <% @suppliers.each do |supplier| %>
           <div>
