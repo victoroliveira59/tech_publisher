@@ -1,38 +1,45 @@
-<%= form_with(model: book) do |form| %>
-  <% if book.errors.any? %>
+<form action="/books" method="post" style="margin-left: 20px">
+  <% if @book.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+      <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
 
       <ul>
-        <% book.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% @book.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="mb-3">
+    <label for="book_title" class="aria-label text-1xl tracking-tighter font-extrabold text-slate-900 dark:text-slate-100" style="display: block">Title</label>
+    <input type="text" id="book_title" name="book[title]" value="<%= @book.title %>" class="form-input aria-label" style="color: white;width: 250px">
   </div>
 
-  <div>
-    <%= form.label :author_id, style: "display: block" %>
-    <%= form.collection_select :author_id, Author.all, :id, :name %>
+  <div class="mb-3">
+    <label for="book_author_id" class="aria-label text-1xl tracking-tighter font-extrabold text-slate-900 dark:text-slate-100" style="display: block">Author</label>
+    <select id="book_author_id" name="book[author_id]" class="form-select" style="color: white;width: 250px">
+      <% Author.all.each do |author| %>
+        <option value="<%= author.id %>" <%= 'selected' if author.id == @book.author_id %>><%= author.name %></option>
+      <% end %>
+    </select>
   </div>
 
-  <div>
-    <%= form.label :assembly_id, style: "display: block" %>
-    <%= form.collection_select :assembly_id, Assembly.all, :id, :name %>
+  <div class="mb-3">
+    <label for="book_assembly_id" class="aria-label text-1xl tracking-tighter font-extrabold text-slate-900 dark:text-slate-100" style="display: block">Assembly</label>
+    <select id="book_assembly_id" name="book[assembly_id]" class="form-select" style="color: white;width: 250px">
+      <% Assembly.all.each do |assembly| %>
+        <option value="<%= assembly.id %>" <%= 'selected' if assembly.id == @book.assembly_id %>><%= assembly.name %></option>
+      <% end %>
+    </select>
   </div>
 
-
-  <div>
-    <%= form.label :isbn, style: "display: block" %>
-    <%= form.text_field :isbn %>
+  <div class="mb-3">
+    <label for="book_isbn" class="aria-label text-1xl tracking-tighter font-extrabold text-slate-900 dark:text-slate-100" style="display: block">ISBN</label>
+    <input type="text" id="book_isbn" name="book[isbn]" value="<%= @book.isbn %>" class="form-input aria-label" style="color: white;width: 250px">
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="mb-3">
+    <input type="submit" value="Submit" class="btn btn-primary">
   </div>
-<% end %>
+</form>
