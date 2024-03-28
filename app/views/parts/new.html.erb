@@ -1,9 +1,10 @@
-<h1>New part</h1>
 
-<%= render "form", part: @part %>
 
-<br>
-
-<div>
-  <%= link_to "Back to parts", parts_path %>
+<div class="max-w-2xl max-w-xl px-4 my-8">
+  <h3 class="text-3xl font-semibold font-heading text-zinc-900 dark:text-zinc-100 tracking-tight mt-3 ml-3 ">New part</h3>
+  <br>
+  <%= render "form", part: @part %>
+  <div class="max-w-3xl max-w-xl px-3 my-2">
+    <%= link_to "Back", parts_path, class: "btn btn-dark", style: "color: white; width: 90px" %>
+  </div>
 </div>
