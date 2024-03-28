@@ -1,18 +1,14 @@
-<form action="/assemblies" method="get" style="margin-left: 20px">
-  <br>
-  <label for="filter_by" class="aria-label text-1xl tracking-tighter font-extrabold text-current dark:text-white">Filtrar por:</label>
+<%= form_with url: assemblies_path, method: :get, local: true do |f| %>
+  <div>
+    <%= f.label :filter_by, "Filtrar por:" %>
 
-  <select id="filter_by" name="filter_by" class="form-select" style="width: 250px">
-    <option value="" selected>Open this select menu</option>
-    <option value="parts_name">Nome da peça</option>
-  </select>
+    <%= f.select :filter_by, options_for_select([['Selecione um filtro',''],['Nome da peça', 'parts_name']], params[:filter_by]), {} %>
+  </div>
 
-  <br>
-  <label for="query" class="aria-label text-1xl tracking-tighter font-extrabold text-current dark:text-white">Consulta:</label>
-  <br>
-  <input type="text" id="query" name="query" value="<%= params[:query] %>" class="form-input aria-label text-current dark:text-white" style="width: 250px">
-  <br><br>
-  <input type="submit" value="Filtrar" class="btn btn-primary">
-  <br>
+  <div>
+    <%= f.label :query, "Consulta" %>
+    <%= f.text_field :query, value: params[:query] %>
+  </div>
 
-</form>
+  <%= f.submit "Search" %>
+<% end %>

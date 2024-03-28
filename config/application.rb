@@ -8,15 +8,6 @@ Bundler.require(*Rails.groups)
 
 module TechPublisher
   class Application < Rails::Application
-    config.generators do |g|
-      g.template_engine :railsui
-      g.fallbacks[:railsui] = :erb
-    end
-
-    config.to_prepare do
-      Devise::Mailer.layout "mailer"
-    end
-
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 

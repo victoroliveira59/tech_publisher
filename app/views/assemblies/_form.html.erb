@@ -11,19 +11,17 @@
     </div>
   <% end %>
 
-  <div class="mb-3 ml-3">
-    <label for="assembly_name" class="aria-label text-1xl tracking-tighter font-extrabold text-slate-900 dark:text-slate-100" style="display: block">Name</label>
-    <input type="text" id="assembly_name" name="assembly[name]" value="<%= @assembly.name %>" class="form-input aria-label text-current dark:text-white" style="width: 250px">
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :parts_ids, style: "display: block" %>
+    <%= collection_check_boxes(:assemblies, :parts_ids, Part.all, :id, :name) %>
   </div>
 
-  <div class="form-group aria-label text-1xl tracking-tighter font-extrabold text-slate-900 dark:text-slate-100" style="margin-top: 10px;margin-left: 10px">
-    <div class="text-lg font-semibold font-heading text-zinc-900 dark:text-zinc-100 tracking-tight"><%= form.label :Parts %><br> </div>
-    <%= collection_check_boxes(:assemblies, :parts_ids, Part.all, :id, :name) do |b| %>
-      <%= b.check_box %>
-      <%= b.label %><br>
-    <% end %>
-  </div>
-  <div class="mb-3 ml-3">
-    <input type="submit" value="Submit" class="btn btn-primary">
+  <div>
+    <%= form.submit %>
   </div>
 <% end %>

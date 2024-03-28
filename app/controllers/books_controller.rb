@@ -7,18 +7,16 @@ class BooksController < ApplicationController
   def index
     @books = Book.all
 
-    if params[:filter_by].present? && params[:query].present?
-      case params[:filter_by]
-      when 'title'
-        @books = @books.where('title LIKE ?', "%#{params[:query]}%")
-      when 'author_name'
-        @books = @books.joins(:author).where('authors.name LIKE ?', "%#{params[:query]}%")
-      end
+    return unless params[:filter_by].present? && params[:query].present?
+
+    case params[:filter_by]
+    when 'title'
+      @books = @books.where('title LIKE ?', "%#{params[:query]}%")
+    when 'author_name'
+      @books = @books.joins(:author).where(" authors.name LIKE ? ", "%#{params[:query]}%")
+    else
+      render index
     end
-
-    @pagy, @books = pagy(@books, items: 5)
-
-    render :index
   end
 
   # GET /books/1 or /books/1.json

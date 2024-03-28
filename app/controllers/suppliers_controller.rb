@@ -6,20 +6,21 @@ class SuppliersController < ApplicationController
   def index
     @suppliers = Supplier.all
     # Condição para pesquisa de filtros de Suppliers
-    return unless params[:filter_by].present? && params[:query].present?
-
-    case params[:filter_by]
-    when 'name'
-      @suppliers = @suppliers.where('name LIKE ?', "%#{params[:query]}%")
-    when 'account_number'
-      @suppliers = @suppliers.joins(:account).where('accounts.number LIKE ?', "%#{params[:query]}%")
-    when 'author_name'
-      @suppliers = @suppliers.joins(parts: { assemblies: { book: :author } }).where('authors.name LIKE ?',
-                                                                                    "%#{params[:query]}%")
-    else
-      render index
+    if params[:filter_by].present? && params[:query].present?
+      case params[:filter_by]
+      when 'name'
+        @suppliers = @suppliers.where("name LIKE ?", "%#{params[:query]}%")
+      when 'account_number'
+        @suppliers = @suppliers.joins(:account).where("accounts.number LIKE ?", "%#{params[:query]}%")
+      when 'author_name'
+        @suppliers = @suppliers.joins(parts: { assemblies: { book: :author } }).where("authors.name LIKE ?", "%#{params[:query]}%")
+      else
+        render index
+      end
     end
   end
+
+
 
   # GET /suppliers/1 or /suppliers/1.json
   def show
@@ -57,10 +58,9 @@ class SuppliersController < ApplicationController
   # DELETE /suppliers/1 or /suppliers/1.json
   def destroy
     @supplier.destroy
-    redirect_to suppliers_url, notice: 'Supplier was successfully destroyed.'
+      redirect_to suppliers_url, notice: 'Supplier was successfully destroyed.'
   end
 
-  # app/controllers/suppliers_controller.rb
   private
 
   # Use callbacks to share common setup or constraints between actions.
