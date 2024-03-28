@@ -1,14 +1,22 @@
 <p style="color: green"><%= notice %></p>
+<p style="color: green"><%= notice %></p>
 
-<h1>Parts</h1>
+<div class="max-w-3xl mx-auto px-4 my-16">
+  <div class="flex items-center justify-between pb-6 border-b dark:border-zinc-700 border-zinc-200">
+    <h1 class="text-4xl font-medium font-heading text-zinc-900 dark:text-zinc-100 tracking-tight">Part</h1>
+    <div class="flex items-center justify-end">
+      <%= link_to "New Part", new_part_path, class: "btn btn-primary", style: "color: white;width: 120px" %>
+    </div>
+  </div>
 
-<div id="parts">
-  <% @parts.each do |part| %>
-    <%= render part %>
-    <p>
-      <%= link_to "Show this part", part %>
-    </p>
-  <% end %>
+    <div id="assemblies">
+      <% @parts.each do |part| %>
+        <div>
+          <%= link_to part_path(part) do %>
+            <h2 class="hover:underline text-primary-600 dark:text-primary-500"><%= part.name %></h2>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-<%= link_to "New part", new_part_path %>
