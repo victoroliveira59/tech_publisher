@@ -1,10 +1,10 @@
-<div class="max-w-2xl max-w-xl px-4 my-8">
-  <h3 class="text-3xl font-semibold font-heading text-zinc-900 dark:text-zinc-100 tracking-tight">Edit assembly</h3>
-  <br>
+<h1>Editing assembly</h1>
 
-  <%= render "form", assembly: @assembly %>
+<%= render "form", assembly: @assembly %>
 
-  <div class="max-w-3xl max-w-xl px-3 my-3">
-    <%= link_to "Back", assembly_path, class: "btn btn-dark", style: "color: white;width: 90px" %>
-  </div>
+<br>
+
+<div>
+  <%= link_to "Show this assembly", @assembly %> |
+  <%= link_to "Back to assemblies", assemblies_path %>
 </div>

@@ -1,17 +1,14 @@
-<form action="/suppliers" method="get" style="margin-left: 20px">
-        <br>
-    <label for="filter_by" class="aria-label text-1xl tracking-tighter font-extrabold text-slate-900 dark:text-slate-100">Filtrar por: </label>
-  <select id="filter_by" name="filter_by" class="form-select" style="color: white; width: 250px">
-          <option value=" " selected>Open this select menu</option>
-          <option value="name">Fornecedor</option>
-          <option value="author_name">Nome do fornecedor</option>
-          <option value="account_number">Número da conta</option>
-  </select>
-  <br>
-    <label for="query" class="text-1xl tracking-tighter font-extrabold text-slate-900 dark:text-slate-100">Consulta:</label>
-  <br>
-    <input type="text" id="query" name="query" value="<%= params[:query] %>"class="form-input aria-label" style="color: white;width: 250px">
-  <br><br>
-    <input type="submit" value="Filtrar" class="btn btn-primary">
-  <br>
-</form>
+<%= form_with url: suppliers_path, method: :get, local: true do |f| %>
+  <div>
+    <%= f.label :filter_by, "Filtrar por:" %>
+
+    <%= f.select :filter_by, options_for_select([['Selecione um filtro',''],['Nome', 'name'], ['Número da Conta', 'account_number'], ['Nome do Autor', 'author_name']], params[:filter_by]), {} %>
+  </div>
+
+  <div>
+    <%= f.label :query, "Consulta" %>
+    <%= f.text_field :query, value: params[:query] %>
+  </div>
+
+  <%= f.submit "Search" %>
+<% end %>

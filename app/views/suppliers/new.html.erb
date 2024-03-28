@@ -1,9 +1,9 @@
-<div class="max-w-2xl max-w-xl px-4 my-8">
-  <h3 class="text-3xl font-semibold font-heading text-zinc-900 dark:text-zinc-100 tracking-tight">New supplier</h3>
-  <br>
+<h1>New supplier</h1>
 
-  <%= render "form", supplier: @supplier %>
-  <div class="max-w-3xl max-w-xl px-5 my-2">
-    <%= link_to "Back", suppliers_path, class: "btn btn-dark", style: "color: white; width: 90px" %>
-  </div>
+<%= render "form", supplier: @supplier %>
+
+<br>
+
+<div>
+  <%= link_to "Back to suppliers", suppliers_path %>
 </div>

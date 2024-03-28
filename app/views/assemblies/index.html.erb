@@ -1,23 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
-<div class="max-w-3xl mx-auto px-4 my-16">
-    <div class="flex items-center justify-between pb-6 border-b dark:border-zinc-700 border-zinc-200">
-      <h1 class="text-4xl font-medium font-heading text-zinc-900 dark:text-zinc-100 tracking-tight">Assemblies</h1>
-      <div class="flex items-center justify-end">
-        <%= link_to "New Assembliy", new_assembly_path, class: "btn btn-primary", style: "color: white;width: 120px" %>
-      </div>
-    </div>
-  <div id="posts" class="divide-y divide-zinc-200 dark:divide-zinc-700">
-    <%= render 'filter_assembly' %>
+<h1>Assemblies</h1>
 
-    <div id="assemblies">
-      <% @assemblies.each do |assembly| %>
-        <div>
-          <%= link_to assembly_path(assembly) do %>
-            <h2 class="hover:underline text-primary-600 dark:text-primary-500"><%= assembly.name %></h2>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-  </div>
+<%= render 'filter_assembly' %>
+
+<div id="assemblies">
+  <% @assemblies.each do |assembly| %>
+    <%= render assembly %>
+    <p>
+      <%= link_to "Show this assembly", assembly %>
+    </p>
+  <% end %>
 </div>
+
+<%= link_to "New assembly", new_assembly_path %>

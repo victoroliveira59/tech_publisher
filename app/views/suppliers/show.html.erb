@@ -1,61 +1,20 @@
 <p style="color: green"><%= notice %></p>
-<div class="max-w-3xl mx-auto px-4 my-16">
-  <div class="pb-6 border-b dark:border-zinc-700 border-zinc-200">
-    <nav aria-label="breadcrumb" class="my-6 font-heading flex text-zinc-500 dark:text-zinc-200 text-sm">
-      <ol class="flex flex-wrap items-center space-x-3 list-none m-0 p-0">
-        <li>
-          <%= link_to "Suppliers", suppliers_path, class: "hover:underline text-primary-600 dark:text-primary-500" %>
-        </li>
-        <li class="flex space-x-3">
-          <div class="flex items-center">
-            <span class="text-zinc-300 dark:text-zinc-500">/</span>
-          </div>
-          <%= link_to "##{@supplier.id}", class: "text-zinc-600 dark:text-zinc-100", "aria-current": "page" %>
-        </li>
-      </ol>
-    </nav>
-    <div class="flex items-center justify-between">
-      <h1 class="text-2xl font-semibold font-heading text-zinc-900 dark:text-zinc-100 tracking-tight flex-1">Supplier: <%= @supplier.name %></h1>
-      <div data-controller="dropdown" class="relative inline-block">
-        <button type="button" data-action="click->dropdown#toggle click@window->dropdown#hide" class=" p-1">
+<h2> Supplier </h2>
+<%= render @supplier %>
+  <% if @supplier.account %>
+  <div>
 
-          <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/>
-          </svg>
-        </button>
-        <div
-          class="hidden transition transform origin-top-left absolute left-0 top-14 bg-white rounded-xl shadow-xl shadow-zinc-900/10 border border-zinc-200 md:w-[200px] w-full z-50 py-2 dark:bg-zinc-900 dark:shadow-zinc-900/50 dark:border-zinc-600/80 md:text-[15px] text-base text-zinc-600 dark:text-zinc-200 font-heading"
-          data-dropdown-target="menu"
-          data-transition-enter-from="opacity-0 scale-95"
-          data-transition-enter-to="opacity-100 scale-100"
-          data-transition-leave-from="opacity-100 scale-100"
-          data-transition-leave-to="opacity-0 scale-95"
-        >
-          <a href="<%= edit_supplier_path %>" class="px-4 py-1.5 hover:text-zinc-950 block dark:hover:text-white">Edit</a>
-          <%= link_to "Delete", supplier_path(@supplier), data: {
-            turbo_method: :delete,
-            turbo_confirm: :'Are you sure?' }, class: "px-4 py-1.5 hover:text-zinc-950 block dark:hover:text-white" %>
-        </div>
-      </div>
-    </div>
+    <p><strong>Bank:</strong> <%= @supplier.account.bank %> </p>
+
+    <%= link_to "Acessar conta", supplier_account_path(@supplier) %>
   </div>
-  <div style="padding: 10px">
-    <strong>CNPJ:</strong>  <%=  @supplier.formatted_cnpj %>
-    <% if @supplier.account %>
-      <div>
-        <p><strong>Bank:</strong> <%= @supplier.account.bank %> </p>
-        <p><%= link_to "Acessar conta", supplier_account_path(@supplier) %></p>
-      </div>
-    <% else %>
-      <p><%= link_to "Criar conta", new_supplier_account_path(@supplier) %></p>
-    <%end%>
-  </div>
+  <% else %>
+    <%= link_to "Criar conta", new_supplier_account_path(@supplier) %>
+  <%end%>
+
+<div>
+  <%= link_to "Edit this supplier", edit_supplier_path(@supplier) %> |
+  <%= link_to "Back to suppliers", suppliers_path %>
+
+  <%= button_to "Destroy this supplier", @supplier, method: :delete %>
 </div>
-
-
-
-
-
-
-
-
