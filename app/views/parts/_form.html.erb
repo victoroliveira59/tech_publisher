@@ -25,7 +25,7 @@
 
   <div class="mb-3 ml-3">
     <label for="supplier_id" class="aria-label text-1xl tracking-tighter font-extrabold text-slate-900 dark:text-slate-100" style="display: block">Supplier</label>
-    <select id="suppliers_id" name="supplier_id" class="form-select aria-label text-current dark:text-white" style="color: #070505;width: 250px">
+    <select id="suppliers_id" name="supplier_id" class="form-select aria-label text-current dark:text-white" style="width: 250px">
       <% Supplier.all.each do |supplier| %>
         <option value="<%= supplier.id %>" <%= 'selected' if supplier.id %>><%= supplier.name %></option>
       <% end %>
