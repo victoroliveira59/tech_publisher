@@ -1,5 +1,5 @@
 import {Controller} from "@hotwired/stimulus"
-import {useTransition, useClickOutside} from "stimulus-use"
+import {useClickOutside, useTransition} from "stimulus-use"
 
 export default class extends Controller {
     static targets = ["container", "content"]

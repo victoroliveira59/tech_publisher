@@ -1,3 +1,4 @@
+
 <%= form_with(model: part) do |form| %>
   <% if part.errors.any? %>
     <div style="color: red">
@@ -11,22 +12,29 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+
+  <div class="mb-3 ml-3">
+    <label for="part_name" class="aria-label text-1xl tracking-tighter font-extrabold text-slate-900 dark:text-slate-100" style="display: block">Name</label>
+    <input type="text" id="part_name" name="part[name]" value="<%= @part.name %>" class="form-input aria-label text-current dark:text-white" style="width: 250px">
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+  <div class="mb-3 ml-3">
+    <label for="part_description" class="aria-label text-1xl tracking-tighter font-extrabold text-slate-900 dark:text-slate-100" style="display: block">Description</label>
+    <input type="text" id="part_description" name="part[description]" value="<%= @part.description %>" class="form-input aria-label text-current dark:text-white" style="width: 250px">
   </div>
 
-  <div>
-    <%= form.label :supplier_id, style: "display: block" %>
-    <%= form.collection_select :supplier_id, Supplier.all, :id, :name %>
+  <div class="mb-3 ml-3">
+    <label for="supplier_id" class="aria-label text-1xl tracking-tighter font-extrabold text-slate-900 dark:text-slate-100" style="display: block">Supplier</label>
+    <select id="suppliers_id" name="supplier_id" class="form-select aria-label text-current dark:text-white" style="width: 250px">
+      <% Supplier.all.each do |supplier| %>
+        <option value="<%= supplier.id %>" <%= 'selected' if supplier.id %>><%= supplier.name %></option>
+      <% end %>
+    </select>
   </div>
 
-  <div>
-    <%= form.submit %>
+
+  <div class="mb-3 ml-3">
+    <input type="submit" value="Submit" class="btn btn-primary">
   </div>
+
 <% end %>

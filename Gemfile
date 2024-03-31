@@ -23,7 +23,7 @@ gem "image_processing", "~> 1.2"
 gem "cpf_cnpj"
 gem "validators"
 gem 'brazilian_documents', '~> 0.1.4'
-
+gem 'pagy'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
