@@ -1,16 +1,41 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Authors</h1>
-
-<%= link_to 'Gerar Relatório', reports_authors_index_path %>
-
-<div id="authors">
-  <% @authors.each do |author| %>
-    <%= render author %>
-    <p>
-      <%= link_to "Show this author", author %>
-    </p>
-  <% end %>
+<div>
+  <%= link_to 'Gerar Relatório', reports_authors_index_path, class: "hover:underline text-primary-600 dark:text-primary-500", style:"margin-left: 20px"%>
 </div>
 
-<%= link_to "New author", new_author_path %>
+<div class="max-w-3xl mx-auto px-4 my-8">
+  <div class="flex items-center justify-between pb-6 border-b dark:border-zinc-700 border-zinc-200">
+    <h1 class="text-4xl font-semibold font-heading text-zinc-900 dark:text-zinc-100 tracking-tight">Author</h1>
+    <div class="flex items-center justify-end">
+      <%= link_to "New author", new_author_path, class: "btn btn-primary", style: "color: white;width: 120px" %>
+    </div>
+  </div>
+  <div id="authors" class="divide-y divide-zinc-300 dark:divide-zinc-700 " style="margin-top: 10px">
+
+    <% @authors.each do |author| %>
+      <div>
+        <%= link_to author_path(author) do %>
+          <div style="display: flex; align-items: center; mso-margin-top-alt: 20px">
+            <span style="margin-right: 10px;">Author:</span>
+            <h2 class="hover:underline text-primary-600 dark:text-primary-500"><%= author.name %></h2>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
