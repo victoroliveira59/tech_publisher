@@ -1,13 +1,17 @@
-<%= form_with url: reports_authors_index_path, method: :get, local: true do |f| %>
-  <div>
-    <%= f.label :filter_by, "Filtrar por:" %>
-    <%= f.select :filter_by, options_for_select([['Selecione um filtro',''],['Nome', 'name']], params[:filter_by]), {} %>
-  </div>
+<section class="ml-4 mt-3">
+  <%= form_with url: reports_authors_index_path, method: :get, local: true do |f| %>
+    <div class="form-label">
+      <%= f.label :filter_by, "Filtrar por:", class:"aria-label text-1xl tracking-tighter font-extrabold text-slate-900 dark:text-slate-100"%>
+      <%= f.select :filter_by, options_for_select([['Selecione um filtro',''],['Nome', 'name']], params[:filter_by]), {}, { class: "form-select w-1/4", "aria-label": "Default select example" }  %>
+    </div>
 
-  <div>
-    <%= f.label :query, "Consulta" %>
-    <%= f.text_field :query, value: params[:query] %>
-  </div>
+    <div class="form-label  ">
+      <%= f.label :query, "Consulta", class:"aria-label text-1xl tracking-tighter font-extrabold text-slate-900 dark:text-slate-100" %>
+      <div >
+        <%= f.text_field :query, value: params[:query],class:"form-input w-1/4"%>
+      </div>
+    </div>
 
-  <%= f.submit "Gerar relatório" %>
-<% end %>
+    <%= f.submit "Gerar relatório", class:"btn btn-primary mb-3 mt-3"%>
+  <% end %>
+</section>
